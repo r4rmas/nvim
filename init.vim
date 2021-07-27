@@ -19,7 +19,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'chun-yang/auto-pairs'
-" Plug 'townk/vim-autoclose'
 Plug 'alvan/vim-closetag'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
