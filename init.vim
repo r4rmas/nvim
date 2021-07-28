@@ -22,6 +22,7 @@ Plug 'chun-yang/auto-pairs'
 Plug 'alvan/vim-closetag'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 noremap <C-E> :NERDTreeToggle<CR>
