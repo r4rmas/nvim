@@ -24,7 +24,8 @@ Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
 call plug#end()
 
-noremap <C-E> :NERDTreeFind<CR>
+noremap <C-E> :NERDTreeToggle<CR>
+let NERDTreeQuitOnOpen=1
 
 
 " Use tab for trigger completion with characters ahead and navigate.
@@ -40,10 +41,10 @@ function! s:check_back_space() abort
 endfunction
 
 
-let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.js'
-let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.js'
-let g:closetag_filetypes = 'html,xhtml,phtml,js'
-let g:closetag_xhtml_filetypes = 'xhtml,jsx,js'
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.jsx,*.js,*.tsx,*.ts'
+let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.js,*.tsx,*.ts'
+let g:closetag_filetypes = 'html,xhtml,phtml,jsx,js,tsx,ts'
+let g:closetag_xhtml_filetypes = 'xhtml,jsx,js,tsx,ts'
 let g:closetag_emptyTags_caseSensitive = 1
 let g:closetag_shortcut = '>'
 let g:closetag_close_shortcut = '<leader>>'
