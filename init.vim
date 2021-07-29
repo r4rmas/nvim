@@ -7,6 +7,7 @@ set noshowmode
 set completeopt+=menuone
 set completeopt+=noinsert
 set sua+=.js
+set termguicolors
 
 highlight VertSplit cterm=NONE
 
@@ -15,14 +16,28 @@ noremap <C-Q> : quit<CR>
 noremap gm :call cursor(0, virtcol('$')/2)<CR>
 
 call plug#begin('~/.vim/plugged')
+" File system explorer
 Plug 'scrooloose/nerdtree'
 Plug 'christoomey/vim-tmux-navigator'
+" Languages support & intellisense
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'chun-yang/auto-pairs'
 Plug 'alvan/vim-closetag'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
+" Git support 
+Plug 'tpope/vim-fugitive'
+" Icons
 Plug 'ryanoasis/vim-devicons'
+" Themes
+Plug 'ntk148v/vim-horizon'
+Plug 'navarasu/onedark.nvim'
+Plug 'dracula/vim'
+Plug 'drewtempelmeyer/palenight.vim'
+Plug 'itchyny/lightline.vim'
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
+Plug 'kyoz/purify', { 'rtp': 'vim' }
+Plug 'rakr/vim-one'
 call plug#end()
 
 noremap <C-E> :NERDTreeToggle<CR>
@@ -55,3 +70,7 @@ let g:closetag_xhtml_filetypes = 'xhtml,jsx,js,tsx,ts'
 let g:closetag_emptyTags_caseSensitive = 1
 let g:closetag_shortcut = '>'
 let g:closetag_close_shortcut = '<leader>>'
+let g:lightline = { 'colorscheme': 'palenight'  }
+
+colorscheme palenight
+
