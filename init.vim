@@ -3,7 +3,6 @@ set relativenumber
 set mouse=a
 set clipboard=unnamedplus
 set sw=2
-set noshowmode
 set completeopt+=menuone
 set completeopt+=noinsert
 set sua+=.js
@@ -70,7 +69,16 @@ let g:closetag_xhtml_filetypes = 'xhtml,jsx,js,tsx,ts'
 let g:closetag_emptyTags_caseSensitive = 1
 let g:closetag_shortcut = '>'
 let g:closetag_close_shortcut = '<leader>>'
-let g:lightline = { 'colorscheme': 'palenight'  }
+let g:lightline = { 
+      \ 'colorscheme': 'palenight',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ]]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ },
+\ }
 
 colorscheme palenight
 
