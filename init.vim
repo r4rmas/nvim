@@ -41,7 +41,7 @@ call plug#end()
 
 noremap <C-E> :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen=1
-
+let g:NERDTreeWinPos = "right"
 
 " Use tab for trigger completion with characters ahead and navigate.
 inoremap <silent><expr> <TAB>
