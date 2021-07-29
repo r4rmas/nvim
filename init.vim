@@ -7,6 +7,8 @@ set completeopt+=menuone
 set completeopt+=noinsert
 set sua+=.js
 set termguicolors
+" Always show tab bar
+" set showtabline=2
 
 highlight VertSplit cterm=NONE
 
@@ -18,6 +20,8 @@ call plug#begin('~/.vim/plugged')
 " File system explorer
 Plug 'scrooloose/nerdtree'
 Plug 'christoomey/vim-tmux-navigator'
+" Status bar
+Plug 'itchyny/lightline.vim'
 " Languages support & intellisense
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'chun-yang/auto-pairs'
@@ -33,7 +37,6 @@ Plug 'ntk148v/vim-horizon'
 Plug 'navarasu/onedark.nvim'
 Plug 'dracula/vim'
 Plug 'drewtempelmeyer/palenight.vim'
-Plug 'itchyny/lightline.vim'
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'kyoz/purify', { 'rtp': 'vim' }
 Plug 'rakr/vim-one'
@@ -73,9 +76,19 @@ let g:lightline = {
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ]]
       \ },
       \ 'component_function': {
-      \   'gitbranch': 'FugitiveHead'
+      \   'gitbranch': 'FugitiveHead',
+      \   'filename' : 'LightlineFilename'
       \ },
 \ }
+
+function! LightlineFilename()
+  let root = fnamemodify(get(b:, 'git_dir'), ':h')
+  let path = expand('%:p')
+  if path[:len(root)-1] ==# root
+    return path[len(root)+1:]
+  endif
+  return expand('%')
+endfunction
 
 colorscheme palenight
 
