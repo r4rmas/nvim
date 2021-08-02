@@ -8,13 +8,12 @@ set completeopt+=noinsert
 set sua+=.js
 set termguicolors
 " Always show tab bar
-" set showtabline=2
+" set showtabline=1
 
 highlight VertSplit cterm=NONE
 
 noremap <C-S> : update<CR>
 noremap <C-Q> : quit<CR>
-noremap gm :call cursor(0, virtcol('$')/2)<CR>
 
 call plug#begin('~/.vim/plugged')
 " File system explorer
@@ -45,7 +44,7 @@ call plug#end()
 noremap <C-E> :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen=1
 let g:NERDTreeWinPos = "right"
-let g:NERDTreeWinSize=24
+let g:NERDTreeWinSize=26
 " No arrows
 let NERDTreeDirArrowExpandable = "\u00a0"
 let NERDTreeDirArrowCollapsible = "\u00a0"
@@ -91,4 +90,3 @@ function! LightlineFilename()
 endfunction
 
 colorscheme palenight
-
